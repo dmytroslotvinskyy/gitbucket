@@ -19,10 +19,10 @@ object DatabaseConfig {
     if (!file.exists) {
       FileUtils.write(
         file,
-        """db {
-          |  url = "jdbc:h2:${DatabaseHome};MVCC=true"
-          |  user = "sa"
-          |  password = "sa"
+        """db {        
+          |  url = url = "jdbc:postgresql://${DataBaseHost}/${DataBaseName}"
+          |  user = "${DataBaseUsername}"
+          |  password = "${DataBasePassword}"
           |#  connectionTimeout = 30000
           |#  idleTimeout = 600000
           |#  maxLifetime = 1800000
