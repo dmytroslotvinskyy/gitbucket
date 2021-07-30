@@ -20,7 +20,7 @@ object DatabaseConfig {
       FileUtils.write(
         file,
         """db {        
-          |  url = url = "jdbc:postgresql://${DataBaseHost}/${DataBaseName}"
+          |  url = "jdbc:postgresql://${DataBaseHost}/${DataBaseName}"
           |  user = "${DataBaseUsername}"
           |  password = "${DataBasePassword}"
           |#  connectionTimeout = 30000
