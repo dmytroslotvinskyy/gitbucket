@@ -8,3 +8,6 @@ addSbtPlugin("com.github.sbt"   % "sbt-pgp"              % "2.1.2")
 addSbtPlugin("com.typesafe.sbt" % "sbt-license-report"   % "1.2.0")
 addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.9.2")
 addSbtPlugin("org.scoverage"    % "sbt-scoverage"        % "1.8.2")
+resolvers += Resolver.bintrayIvyRepo("geekity", "sbt-plugins")
+
+addSbtPlugin("io.nhanzlikova.sbt" % "sbt-embedded-postgres" % "2.0.0")
