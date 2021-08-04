@@ -11,3 +11,4 @@ To run:
 
   1. Edit `gitbucket.conf` to suit.
   2. Type: `install`
+  3. 
