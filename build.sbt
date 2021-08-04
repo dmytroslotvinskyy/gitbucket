@@ -270,6 +270,11 @@ pomExtra := (
       <url>https://github.com/McFoggy</url>
     </developer>
   </developers>
+   <developer>
+      <id>tanacasino</id>
+      <name>Tomofumi Tanak  a</name>
+      <url>https://github.com/tanacasino</url>
+    </developer>
 )
 
 Test / testOptions ++= {
