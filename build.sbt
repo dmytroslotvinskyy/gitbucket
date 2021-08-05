@@ -244,37 +244,9 @@ pomExtra := (
       <name>Naoki Takezoe</name>
       <url>https://github.com/takezoe</url>
     </developer>
-    <developer>
-      <id>shimamoto</id>
-      <name>Takako Shimamoto</name>
-      <url>https://github.com/shimamoto</url>
-    </developer>
-    <developer>
-      <id>tanacasino</id>
-      <name>Tomofumi Tanaka</name>
-      <url>https://github.com/tanacasino</url>
-    </developer>
-    <developer>
-      <id>mrkm4ntr</id>
-      <name>Shintaro Murakami</name>
-      <url>https://github.com/mrkm4ntr</url>
-    </developer>
-    <developer>
-      <id>nazoking</id>
-      <name>nazoking</name>
-      <url>https://github.com/nazoking</url>
-    </developer>
-    <developer>
-      <id>McFoggy</id>
-      <name>Matthieu Brouillard</name>
-      <url>https://github.co   m/McFoggy</url>
-    </developer>
+  
   </developers>
-   <developer>
-      <id>tanacasino</id>
-      <name>Tomofumi Tanak  a</name>
-      <url>https://github.com/tanacasino</url>
-    </developer>
+ 
 )
 
 Test / testOptions ++= {
