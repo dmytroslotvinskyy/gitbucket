@@ -267,7 +267,7 @@ pomExtra := (
     <developer>
       <id>McFoggy</id>
       <name>Matthieu Brouillard</name>
-      <url>https://github.com/McFoggy</url>
+      <url>https://github.co   m/McFoggy</url>
     </developer>
   </developers>
    <developer>
