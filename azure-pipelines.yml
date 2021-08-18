@@ -1,19 +1,44 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- master
+name: $(Date:yyyyMMdd)$(Rev:.r)_$(Build.SourceBranch)_$(Build.SourceVersion)
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+# Found no other way to create a credentials containing file for sbt :/
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'New-Item ~/.sbt/.azure-artifacts-credentials -Force'
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'echo realm=https://example.com/ >> ~/.sbt/.azure-artifacts-credentials'
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'echo host=example.com >> ~/.sbt/.azure-artifacts-credentials'
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'echo user=feed >> ~/.sbt/.azure-artifacts-credentials'
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'echo password=$(AZURE_ARTIFACTS_CREDENTIALS_PASSWORD) >> ~/.sbt/.azure-artifacts-credentials'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    wget http://apt.typesafe.com/repo-deb-build-0002.deb
+    sudo dpkg -i repo-deb-build-0002.deb
+    sudo apt-get update
+    sudo apt-get install sbt
+  displayName: 'Install SBT.'
+
+- script: sbt test
+  displayName: 'Test.'
+
+- script: sbt docker:stage
+  displayName: 'Stage Dockerfile.'
