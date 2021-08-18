@@ -4,9 +4,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-# Found no other way to create a credentials containing file for sbt :/
-
-
 - script: |
     wget http://apt.typesafe.com/repo-deb-build-0002.deb
     sudo dpkg -i repo-deb-build-0002.deb
